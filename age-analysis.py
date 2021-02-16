@@ -5,7 +5,7 @@ Input-validatie
 getal moet tussen 0 en 134 zijn.
 Schrijf uit in welk jaar de persoon is geboren, en of hij/zij meerderjarig is.
 
-'''
+''''''
 THIS_YEAR = 2021
 
 age = int(input("Geef leeftijd: "))
@@ -20,7 +20,7 @@ else:
         print("The person is not a minor")
     else:
         print("The person is a minor")
-
+'''
 while True:
     try:
         # Note: Python 2.x users should use raw_input, the equivalent of 3.x's input
