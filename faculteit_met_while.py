@@ -13,12 +13,21 @@ while n < 0:
     print("Geen geldige waarde! Voer een positieve waarde in!")
     n = int(input("Geef een waarde waarvan dwe de faculteit gaan berekenen: "))
 
-faculteit = 1
+n_off = n
+
+faculteit1 = 1
 
 while n > 0:
-    faculteit = faculteit * n
+    faculteit1 = faculteit1 * n
     n = n - 1
 
-print("De faculteit van", originele_n, "is", faculteit)
+faculteit2 = 1
+
+for i in range(1, n_off+1):
+    faculteit2 *= i
+
+print("De faculteit van", originele_n, "is", faculteit1)
+print("De faculteit van", originele_n, "is", faculteit2)
+
 
 

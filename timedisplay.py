@@ -12,21 +12,44 @@ Some example outputs for given inputs:
 """
 # Commentaar bij meerdere lijnen met 2x driedubbele aanhalingstekens
 
-# Ask for amount of seconds
-total_seconds = int(input("Enter number of seconds: "))
 
+total_seconds = int(input("Enter number of seconds: "))
+def function(total_seconds):
 # There are 60*60 seconds in an hour (volgorde bewerkingen dus haakjes)
-hours = total_seconds // (60 * 60)
+    hours = total_seconds // (60 * 60)
 
 # subtract the hours from the total amount of seconds
-total_seconds = total_seconds - hours * 60 * 60
+    total_seconds = total_seconds - hours * 60 * 60
 
 # Calculate number of minutes
-minutes = total_seconds // 60
+    minutes = total_seconds // 60
 
 # Calculate number of remaining seconds
-seconds = total_seconds - minutes * 60
+    seconds = total_seconds - minutes * 60
 
 # print result (2de zelf, is niet helemaal correct, want spatie te veel dus daarom concatenatie(+) gebruiken)
-print(str(hours) + ":" + str(minutes) + ":" + str(seconds))
-print(hours, ":", minutes, ":", seconds)
+    mes = str(hours) + ":" + str(minutes) + ":" + str(seconds)
+    return mes
+
+print(function(total_seconds))
+#print(str(hours) + ":" + str(minutes) + ":" + str(seconds))
+#print(hours, ":", minutes, ":", seconds)
+
+
+
+assert function(12457) == "3:27:37"
+assert function(86399) == "23:59:59"
+assert function(4655456) == "1293:10:56"
+assert function(86400) == "24:0:0"
+'''
+if total_seconds == 0:
+    assert mes == "0:0:0"
+if total_seconds == 86399:
+    assert mes == "23:59:59"
+if total_seconds == 4655456:
+    assert mes == "1293:10:56"
+if total_seconds == 86400:
+    assert mes == "24:0:0"
+'''
+
+#(assert zelf :))

@@ -15,7 +15,7 @@ else:
     print("The word 'Book' does not appear in the text")
 
 if "book" in TEXT.lower():
-    print("The word 'Book' appears in the text, case sensitive")
+    print("The word 'Book' appears in the text, case sensitive") #insensitive?
 else:
     print("The word 'Book' does not appear in the text, case insensitive")
 

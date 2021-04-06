@@ -16,7 +16,7 @@ print()
 for n in range(1, NMAX + 1):
     print("%10s" % "x ", end="")
 
-print("\n", "     ","-"* 35)
+print("\n", "   ", "-" * 35)
 
 # Print table body
 #

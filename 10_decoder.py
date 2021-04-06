@@ -9,7 +9,7 @@ Hint: maak gebruik van de ASCII waardes van characters om het Caesarcijfer te on
 Hint: maak gebruik van de ord=en =hr=functies voor de ASCII conversies.
 
 Voorbeelden:
-"ebfx !axfyfp" en verschuiving = 1 --> "de zee"
+"ebfx !axfyfp" en verschuiving = 1 --> "de zee" (vervangen door pfyfxa! xfbe en 1)
 "sepwpoexl" en verschuiving = 4 --> "hallo"
 "!!sepwpoexL" en verscuiving = 4 --> "Hallo!"
 """
@@ -34,10 +34,41 @@ for i in range(len(word_reversed)):
 # en is het dus - shift_factor i.p.v. + shift_factor
 decoded_word = ""
 for letter in no_nonsense_word:
-    decoded_word += chr(ord(letter) - shift_factor)
+    # enkel oorspronkelijke letters moeten opgeschoven worden
+    if 65 <= ord(letter) <= 90 or 97 <= ord(letter) <= 122:
+        if letter.isupper():
+            if (ord(letter) - shift_factor) < 65:
+                decoded_word += chr(ord(letter) - shift_factor - 65 + 91)
+            else:
+                decoded_word += chr(ord(letter) - shift_factor)
+        elif letter.islower():
+            if 90 < (ord(letter) - shift_factor) < 97:
+                decoded_word += chr(ord(letter) - shift_factor - 97 + 123)
+            else:
+                decoded_word += chr(ord(letter) - shift_factor)
+    else:
+        decoded_word += letter
+
+
+
+'''
+if encrypted_sentence[i].isalpha():
+if encrypted_sentence[i].islower():
+first_letter = 'a'
+else:
+first_letter = "A"
+
+for letter in no_nonsense_word:
+    if (letter.lower()).isalpha():
+        if letter 
+        decoded_word += chr(ord(letter) - shift_factor)
+    else:
+        decoded_word += letter
+'''
+
 
 # Print result
-#print(word)
-#print(word_reversed)
-#print(no_nonsense_word)
+print(word)
+print(word_reversed)
+print(no_nonsense_word)
 print("Gedecodeerd woord:", decoded_word)

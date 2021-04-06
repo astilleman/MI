@@ -6,9 +6,29 @@ Bewijs de correctheid.
 Extra:Wat gebeurt er als er zowel integers als strings in je lijst kunnen zitten?
 Hoe zou je je preconditie uitbreiden om dit probleem te voorkomen?
 """
+''''
+#eigen functie (extra)
+def getal_boolean_functie(lijst):
+    for getal in lijst:
+        getal = str(getal).replace('.', '')
+        if not getal.isdigit() and \
+                not(getal[0] == "-" and getal[1:].isdigit()):
+            lijst.remove(getal)
+#stop mijne
+'''
+def string_to_int_or_float(lijst):
+    nieuwe_lijst = []
+    for getal in lijst:
+        if type(getal) == str:
+            getal = float(getal)
+        nieuwe_lijst.append(getal)
+    return nieuwe_lijst
 
-lijst = [34.2,7,9,2,-5,1.98,23,-42,28.7,-1,-19,34.3, -3.10]
-assert 0 < len(lijst)
+
+lijst = [34.2,7,9,2,-5,1.98,23,-42,28.7,-1, -19,34.3, -3.10]
+#getal_boolean_functie(lijst)
+#lijst = string_to_int_or_float(lijst)
+assert 0 < len(lijst) and all(not(isinstance(element, str)) for element in lijst)
 assert 1 <= 1 <= len(lijst) and lijst[0] == max(lijst[:1])
 # De twee asserts volgen op elkaar want als 0 < len(lijst),
 # dan is de lengte van de lijst minstens 1 en dus geldt 

@@ -8,5 +8,6 @@ split_index = len(number) - 3
 formatted_number = number[: split_index] + "," + number[split_index:]
 
 ## alternative solution
-# formatted_number = number[:-3] + "," + number[-3:]
+formatted_number2 = number[:-3] + "," + number[-3:]
 print("The formatted number is: " + formatted_number)
+print("The formatted number 2 is: " + formatted_number2)

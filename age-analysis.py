@@ -20,7 +20,7 @@ else:
         print("The person is not a minor")
     else:
         print("The person is a minor")
-'''
+
 while True:
     try:
         # Note: Python 2.x users should use raw_input, the equivalent of 3.x's input
@@ -37,3 +37,27 @@ if age >= 18:
     print("You are able to vote in the United States!")
 else:
     print("You are not able to vote in the United States.")
+'''
+
+
+# Hieronder volgt juiste met input-validatie, ook op strings
+THIS_YEAR = 2021
+
+age = input("Geef leeftijd: ")
+while not str(age).isdigit() or \
+    (str(age).isdigit() and float(age) % int(age) != 0) or \
+    (str(age).isdigit() and int(age) < 0) or \
+    (str(age).isdigit() and int(age) > 134):
+
+    print(" Dit is geen gelidige leeftijd, probeer opnieuw")
+    age = input("Geef leeftijd: ")
+
+# Na while-lus sws geldig getal
+
+age = int(age)
+year_of_birth = THIS_YEAR - age
+print("Year of birth is", year_of_birth)
+if age >= 10:
+    print("The person is not a minor")
+else:
+    print("The person is a minor")

@@ -22,3 +22,21 @@ else:
 #   print("Dit is geen schrikkeljaar!")
 
 
+
+'''
+Mijn oplossing
+def schrikkeljaar(year):
+    schrikkeljaar_boolean = False
+
+    if year % 400 == 0:
+        schrikkeljaar_boolean = True
+    elif year % 4 == 0 and year % 100 != 0:
+        schrikkeljaar_boolean = True
+
+    return schrikkeljaar_boolean
+
+year = int(input("Give a number: "))
+if schrikkeljaar(year):
+    print("Dit is een schrikkeljaar!")
+else:
+    print("Dit is geen schrikkeljaar.")'''

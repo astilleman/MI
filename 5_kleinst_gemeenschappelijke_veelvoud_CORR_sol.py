@@ -4,7 +4,6 @@ Bewijs de correctheid.
 """
 import math
 
-
 num_1 = int(input('Geef getal 1: '))
 num_2 = int(input('Geef getal 2: '))
 assert 0 < num_1 and 0 < num_2
